@@ -1,0 +1,20 @@
+<lcgdict>
+
+ <class name="LorentzVec" ClassVersion="3">
+  <version ClassVersion="3" checksum="4037397484"/>
+ </class>
+ <class name="std::vector<LorentzVec>"/>
+ <class name="edm::Wrapper<std::vector<LorentzVec> >"/>
+
+ <class name="CompLorentzVec" ClassVersion="3">
+  <version ClassVersion="3" checksum="1324190307"/>
+ </class>
+ <class name="std::vector<CompLorentzVec>"/>
+ <class name="edm::Wrapper<std::vector<CompLorentzVec> >"/>
+
+ <class name="ApproxPFJet" ClassVersion="4">
+  <version ClassVersion="4" checksum="3140235642"/>
+ </class>
+ <class name="std::vector<ApproxPFJet>"/>
+ <class name="edm::Wrapper<std::vector<ApproxPFJet> >"/>
+</lcgdict>

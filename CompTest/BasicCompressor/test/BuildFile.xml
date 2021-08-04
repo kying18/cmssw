@@ -1,0 +1,10 @@
+<library name="CompTestBasicCompressorTestPlugins" file="*.cc">
+   <use name="FWCore/Framework"/>
+   <use name="FWCore/PluginManager"/>
+   <use name="FWCore/ParameterSet"/>
+   <use name="DataFormats/JetReco"/>
+   <!-- <use name="DataFormats/CompLorentzVec"/> -->
+   <use name="CommonTools/UtilAlgos"/>
+   <use name="CommonTools/Utils"/>
+   <flags EDM_PLUGIN="1"/>
+</library>

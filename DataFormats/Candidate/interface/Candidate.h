@@ -34,6 +34,7 @@ namespace reco {
     typedef int Charge;
     /// Lorentz vector
     typedef math::XYZTLorentzVector LorentzVector;
+    // typedef math::XYZTLorentzVectorF LorentzVectorF;
     /// Lorentz vector
     typedef math::PtEtaPhiMLorentzVector PolarLorentzVector;
     /// point in the space
@@ -106,6 +107,7 @@ namespace reco {
     virtual double y() const = 0;
     /// set 4-momentum
     virtual void setP4(const LorentzVector& p4) = 0;
+    // virtual void setP4(const LorentzVectorF& p4) = 0;
     /// set 4-momentum
     virtual void setP4(const PolarLorentzVector& p4) = 0;
     /// set particle mass

@@ -19,6 +19,7 @@ namespace reco {
     typedef int Charge;
     /// Lorentz vector
     typedef math::XYZTLorentzVector LorentzVector;
+    // typedef math::XYZTLorentzVectorF LorentzVectorF;
     /// Lorentz vector
     typedef math::PtEtaPhiMLorentzVector PolarLorentzVector;
     /// point in the space
@@ -130,6 +131,7 @@ namespace reco {
     double y() const { return rapidity(); }
     /// set 4-momentum
     void setP4(const LorentzVector& p4) { m_state.setP4(p4); }
+    // void setP4(const LorentzVectorF& p4) { m_state.setP4(p4); }
     /// set 4-momentum
     void setP4(const PolarLorentzVector& p4) { m_state.setP4(p4); }
     /// set particle mass
