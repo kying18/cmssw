@@ -37,10 +37,10 @@ process.BasicCompressor = cms.EDProducer("BasicCompressor",
 	inputPFJets = cms.InputTag("kt4PFJetsForRho")
 )
 
-# process.BasicCompressorDump = cms.EDAnalyzer("BasicCompressorDump",
-#     inputPFJets = cms.InputTag("kt4PFJetsForRho"),
-#     inputPFJetsCompressed = cms.InputTag("BasicCompressor")
-# )
+process.BasicCompressorDump = cms.EDAnalyzer("BasicCompressorDump",
+    inputPFJets = cms.InputTag("kt4PFJetsForRho"),
+    inputPFJetsCompressed = cms.InputTag("kt4PFJetsForRho")
+)
 
 process.outputCompress = cms.OutputModule("PoolOutputModule",
     fileName = cms.untracked.string('test_compress.root'),
@@ -56,28 +56,7 @@ process.outputCompress = cms.OutputModule("PoolOutputModule",
 )
 
 process.basicCompressor_step = cms.Path(process.BasicCompressor)
+process.analyzer_step = cms.Path(process.BasicCompressorDump)
 
 process.output = cms.EndPath(process.outputCompress)
-process.schedule = cms.Schedule(process.basicCompressor_step, process.output)
-
-# from PhysicsTools.PatAlgos.tools.helpers import associatePatAlgosToolsTask
-# associatePatAlgosToolsTask(process)
-
-# from Configuration.Applications.ConfigBuilder import MassReplaceInputTag
-# MassReplaceInputTag(process, new="rawDataMapperByLabel", old="rawDataCollector")
-
-# #do not add changes to your config after this point (unless you know what you are doing)
-# from FWCore.ParameterSet.Utilities import convertToUnscheduled
-# process=convertToUnscheduled(process)
-
-
-# # Customisation from command line
-
-# #Have logErrorHarvester wait for the same EDProducers to finish as those providing data for the OutputModule
-# from FWCore.Modules.logErrorHarvester_cff import customiseLogErrorHarvesterUsingOutputCommands
-# process = customiseLogErrorHarvesterUsingOutputCommands(process)
-
-# # Add early deletion of temporary data products to reduce peak memory need
-# from Configuration.StandardSequences.earlyDeleteSettings_cff import customiseEarlyDelete
-# process = customiseEarlyDelete(process)
-# # End adding early deletion
+process.schedule = cms.Schedule(process.basicCompressor_step, process.analyzer_step, process.output)

@@ -17,4 +17,7 @@
  </class>
  <class name="std::vector<ApproxPFJet>"/>
  <class name="edm::Wrapper<std::vector<ApproxPFJet> >"/>
+ <class name="ApproxPFJet::Specific" ClassVersion="3">
+  <version ClassVersion="3" checksum="162682626"/>
+ </class>
 </lcgdict>

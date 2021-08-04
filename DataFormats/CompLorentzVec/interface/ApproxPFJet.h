@@ -70,6 +70,7 @@ public:
     vertex_ = vertex;
     m_specific = specific;
   }
+  const Specific& getSpecific() const { return m_specific; }
 
   float px() const {return p4_[0]; }
   float py() const {return p4_[1]; }
